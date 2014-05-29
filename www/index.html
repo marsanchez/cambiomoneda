@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>Cambiar dolares a euros</title>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <style>
+        body{
+        background-color: #CEF6CE;
+        font-family: 'Droid Sans', sans-serif;
+        }
+        .app1{
+        margin: 0px auto;
+        width: 300px;
+        height: 150px;
+        padding: 30px;
+        background-color: white;
+        margin-bottom: 30px;
+        z-index: 2;
+        }
+
+        .app2{
+        margin: 0px auto;
+        width: 300px;
+        height: 150px;
+        padding: 30px;
+        background-color: white;
+        }
+
+        #titulo{
+        font-family: 'Lobster', cursive;
+        text-align: center;
+        color: #173B0B;
+        }
+
+        .muestra{
+            position: absolute;
+            margin-top: -30px;
+            font-size: 220px;
+            opacity: 0.2;
+            letter-spacing: -10pt;
+        }
+        
+             .muestra2{
+            position: absolute;
+            margin-top: -30px;
+            font-size: 220px;
+            opacity: 0.2;
+            letter-spacing: -10pt;
+        }
+        
+        #resultadoDolar{
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        #resultadoEuro{
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        </style>
+    </head>
+    <body>
+         <h1 id="titulo">Convertidor de moneda</h1>
+        <h3 class="muestra"> € - $ </h3>
+        <div class="app1">
+               Introduce tu cantidad en euros <input type="text" id="euro">
+               <button id="cambiarEuros">cambiar dolares</button><br><br>
+              <span id="resultadoDolar"></span>
+            </div>
+             
+             <h3 class="muestra2"> $ - €</h3>
+            <div class="app2">
+                Introduce tu cantidad en dolares <input type="text" id="dolar">
+               <button id="cambiarDolar">cambiar euros</button><br><br>
+              <span id="resultadoEuro"></span>
+        </div>
+   <script>
+
+$euro = $('#euro');
+$dolar = $('#dolar');
+$body = $('body');
+$botonEuro = $('#cambiarEuros');
+$botonDolar = $('#cambiarDolar');
+$ResulDolar = $('#resultadoDolar');
+$ResulEuro = $('#resultadoEuro');
+var dollar = 1.3086;
+
+
+$botonEuro.click(function(event) {
+    $resultado = dollar * $euro.val();
+    $ResulDolar.html($resultado + ' $');
+});
+
+$botonDolar.click(function(event) {
+    $resultado = $dolar.val() / dollar;
+    $ResulEuro.html($resultado + ' €');
+});
+
+
+   </script>
+    </body>
+</html>
